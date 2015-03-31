@@ -1,0 +1,1 @@
+SkeletonRailsApi::Application.config.secret_token = 'a7cd698a296c84364dd823b125e07dd7443f61d44f4653fa13e9bcad3c827b344afb5794642a52ebc68cd7aaa85bba334e6d5f3d46657223a84155433970a3b7'

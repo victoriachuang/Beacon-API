@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: beacon-rails-api_development
+
+test:
+  <<: *default
+  database: beacon-rails-api_test
+  
+production:
+  <<: *default
+  database: beacon-rails-api_production
+  username: beacon-rails-api
+  password: <%= ENV['beacon-rails-api_DATABASE_PASSWORD'] %>

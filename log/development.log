@@ -1,0 +1,689 @@
+
+
+Started GET "/events" for ::1 at 2015-02-17 15:48:35 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (60.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (30.2ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 37ms (Views: 2.4ms | ActiveRecord: 31.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/events" for ::1 at 2015-02-17 15:50:04 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 15:50:06 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (61.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEvents (20150213220627)
+  [1m[35m (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/apprentice/Desktop/Beacon-BEA/db/migrate/20150213220627_create_events.rb:12)
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "title" character varying, "description" text, "location" character varying, "date_start" timestamp, "date_end" timestamp, "people_count" integer DEFAULT 1, "category" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150213220627"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (16.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (41.6ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dignissimos consequatur ut et."], ["description", "Temporibus aut facere sit animi id."], ["location", "1197 8th St, San Francisco"], ["date_start", "2015-02-21 00:00:00.000000"], ["date_end", "2015-02-20 00:00:00.000000"], ["people_count", 66], ["category", "Social"], ["created_at", "2015-02-17 23:52:21.907936"], ["updated_at", "2015-02-17 23:52:21.907936"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Explicabo veritatis sed qui earum."], ["description", "Illo voluptatibus qui omnis dolor voluptatum."], ["location", "1521 Howard St, San Francisco"], ["date_start", "2015-02-18 00:00:00.000000"], ["date_end", "2015-02-22 00:00:00.000000"], ["people_count", 26], ["category", "Food"], ["created_at", "2015-02-17 23:52:21.959910"], ["updated_at", "2015-02-17 23:52:21.959910"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Ad nam omnis blanditiis."], ["description", "Ut eum architecto eos omnis mollitia."], ["location", "1197 8th St, San Francisco"], ["date_start", "2015-02-19 00:00:00.000000"], ["date_end", "2015-02-22 00:00:00.000000"], ["people_count", 63], ["category", "Social"], ["created_at", "2015-02-17 23:52:21.966155"], ["updated_at", "2015-02-17 23:52:21.966155"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Aperiam minus voluptatum velit qui non libero facilis illo."], ["description", "Cupiditate et porro ad eos."], ["location", "137 Carmel St, San Francisco"], ["date_start", "2015-02-20 00:00:00.000000"], ["date_end", "2015-02-22 00:00:00.000000"], ["people_count", 93], ["category", "Food"], ["created_at", "2015-02-17 23:52:21.970377"], ["updated_at", "2015-02-17 23:52:21.970377"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Voluptas error rem quidem fugiat."], ["description", "Accusamus et natus et ea omnis nihil."], ["location", "1711 9th Ave, San Francisco"], ["date_start", "2015-02-22 00:00:00.000000"], ["date_end", "2015-02-24 00:00:00.000000"], ["people_count", 43], ["category", "Outdoors"], ["created_at", "2015-02-17 23:52:21.974234"], ["updated_at", "2015-02-17 23:52:21.974234"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Sed et nostrum est voluptatibus non aut."], ["description", "Nobis mollitia et sapiente ipsum saepe."], ["location", "1711 9th Ave, San Francisco"], ["date_start", "2015-02-20 00:00:00.000000"], ["date_end", "2015-02-18 00:00:00.000000"], ["people_count", 97], ["category", "Social"], ["created_at", "2015-02-17 23:52:21.978882"], ["updated_at", "2015-02-17 23:52:21.978882"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Temporibus qui consequatur libero cupiditate consequatur velit et maiores."], ["description", "Quasi quia et eum."], ["location", "1521 Howard St, San Francisco"], ["date_start", "2015-02-20 00:00:00.000000"], ["date_end", "2015-02-23 00:00:00.000000"], ["people_count", 5], ["category", "Outdoors"], ["created_at", "2015-02-17 23:52:21.982674"], ["updated_at", "2015-02-17 23:52:21.982674"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Eum exercitationem maiores natus ut quibusdam debitis."], ["description", "Dolores velit facilis quibusdam."], ["location", "1521 Howard St, San Francisco"], ["date_start", "2015-02-18 00:00:00.000000"], ["date_end", "2015-02-21 00:00:00.000000"], ["people_count", 92], ["category", "Video Games"], ["created_at", "2015-02-17 23:52:21.986188"], ["updated_at", "2015-02-17 23:52:21.986188"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dolorum ipsa possimus expedita dolor."], ["description", "Laboriosam eaque sed in quibusdam cumque aut voluptas omnis."], ["location", "1197 8th St, San Francisco"], ["date_start", "2015-02-20 00:00:00.000000"], ["date_end", "2015-02-21 00:00:00.000000"], ["people_count", 64], ["category", "Outdoors"], ["created_at", "2015-02-17 23:52:21.989957"], ["updated_at", "2015-02-17 23:52:21.989957"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Odit corporis dolorem nihil iste quae qui nisi placeat."], ["description", "Impedit facilis harum debitis aut."], ["location", "3601 Fillmore St, San Francisco"], ["date_start", "2015-02-22 00:00:00.000000"], ["date_end", "2015-02-23 00:00:00.000000"], ["people_count", 61], ["category", "Sports"], ["created_at", "2015-02-17 23:52:21.993403"], ["updated_at", "2015-02-17 23:52:21.993403"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+
+
+Started GET "/events" for ::1 at 2015-02-17 15:52:47 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 3.9ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 15:52:51 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 1]]
+  [1m[36m (28.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 3]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 5]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 9]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Aaron's birthday party"], ["description", "Aaron is turning 20. Bring your own apple juice."], ["location", "1080 Folsom St, San Francisco"], ["date_start", "2015-02-14 20:00:00.000000"], ["date_end", "2015-02-15 01:00:00.000000"], ["people_count", 30], ["category", "Social"], ["created_at", "2015-02-17 23:54:53.254846"], ["updated_at", "2015-02-17 23:54:53.254846"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Burrito bet smackdown"], ["description", "Bet burritos on Trivia Crack matches, coin tosses, ping pong games, and Smash Bros. Burritos from El Farolito only. Limit $5 per repaid burrito.\n"], ["location", "2779 Mission St, San Francisco"], ["date_start", "2015-02-20 20:00:00.000000"], ["date_end", "2015-02-20 20:00:00.000000"], ["people_count", 15], ["category", "Food"], ["created_at", "2015-02-17 23:54:53.262112"], ["updated_at", "2015-02-17 23:54:53.262112"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "James' foot massages"], ["description", "Very bad idea. Do not come."], ["location", "670 Ellis St, San Francisco"], ["date_start", "2015-02-21 04:00:00.000000"], ["date_end", "2015-02-21 04:05:00.000000"], ["people_count", 5], ["category", "Social"], ["created_at", "2015-02-17 23:54:53.266379"], ["updated_at", "2015-02-17 23:54:53.266379"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Desert Rabbits demos"], ["description", "We made amazing apps. Hire us!"], ["location", "633 Folsom St, San Francisco"], ["date_start", "2015-02-20 19:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 100], ["category", "Misc"], ["created_at", "2015-02-17 23:54:53.270473"], ["updated_at", "2015-02-17 23:54:53.270473"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 15:55:15 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 21ms (Views: 13.8ms | ActiveRecord: 3.8ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events/14" for ::1 at 2015-02-17 15:55:24 -0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 14]]
+Completed 200 OK in 40ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 15:59:28 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events/14" for ::1 at 2015-02-17 16:00:27 -0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 14]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (20.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEvents (20150213220627)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/apprentice/Desktop/Beacon-BEA/db/migrate/20150213220627_create_events.rb:12)
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "title" character varying, "description" text, "location" character varying, "date_start" timestamp, "date_end" timestamp, "people_count" integer DEFAULT 1, "category" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (15.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150213220627"]]
+  [1m[36m (16.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (16.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Aaron's birthday party"], ["description", "Aaron is turning 20. Bring your own apple juice."], ["location", "1272 El Camino Real, San Bruno"], ["date_start", "2015-02-14 20:00:00.000000"], ["date_end", "2015-02-15 01:00:00.000000"], ["people_count", 30], ["category", "Social"], ["created_at", "2015-02-18 00:34:31.441579"], ["updated_at", "2015-02-18 00:34:31.441579"]]
+  [1m[35m (4.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Smash Bros tournament"], ["description", "The red controller wins every time."], ["location", "1080 Folsom St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 20], ["category", "Video Games"], ["created_at", "2015-02-18 00:34:31.454098"], ["updated_at", "2015-02-18 00:34:31.454098"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Burrito bet smackdown"], ["description", "Bet burritos on Trivia Crack matches, coin tosses, ping pong games, and Smash Bros. Burritos from El Farolito only. Limit $5 per repaid burrito. No guac allowed."], ["location", "2779 Mission St, San Francisco"], ["date_start", "2015-02-20 20:00:00.000000"], ["date_end", "2015-02-20 20:00:00.000000"], ["people_count", 15], ["category", "Food"], ["created_at", "2015-02-18 00:34:31.457923"], ["updated_at", "2015-02-18 00:34:31.457923"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Desert Rabbits demos"], ["description", "We made amazing apps. Hire us!"], ["location", "633 Folsom St, San Francisco"], ["date_start", "2015-02-20 19:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 100], ["category", "Misc"], ["created_at", "2015-02-18 00:34:31.461894"], ["updated_at", "2015-02-18 00:34:31.461894"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Bad joke competition"], ["description", "Bring your best Reddit jokes. Worst joke wins a burrito!"], ["location", "874 Fell St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 10], ["category", "Entertainment"], ["created_at", "2015-02-18 00:34:31.465483"], ["updated_at", "2015-02-18 00:34:31.465483"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Join the Chipotle gang for lunch!"], ["description", "Everyone follow Victoria to Chipotle. The one at the Metreon gives you more meat."], ["location", "525 Market St, San Francisco"], ["date_start", "2015-02-21 04:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 10], ["category", "Food"], ["created_at", "2015-02-18 00:34:31.468871"], ["updated_at", "2015-02-18 00:34:31.468871"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Morning coffee run"], ["description", "Victoria will get Philz for all team leads! Text her before 8:15 or you will default to a large Tesora medium medium."], ["location", "201 Berry St, San Francisco"], ["date_start", "2015-02-21 04:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 8], ["category", "Food"], ["created_at", "2015-02-18 00:34:31.472398"], ["updated_at", "2015-02-18 00:34:31.472398"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "The holiest of all holidays"], ["description", "Don't worry about a thing, cause every little thing's gonna be alright."], ["location", "56 Hope Road Kingston 6 Hope Rd, Kingston, Jamaica"], ["date_start", "2015-04-20 08:00:00.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 200], ["category", "Social"], ["created_at", "2015-02-18 00:34:31.475820"], ["updated_at", "2015-02-18 00:34:31.475820"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Coachella"], ["description", "W00 music and hipster bands."], ["location", "81-800 Avenue 51, Indio, CA"], ["date_start", "2015-04-10 19:59:59.000000"], ["date_end", "2015-04-17 19:59:59.000000"], ["people_count", 500], ["category", "Social"], ["created_at", "2015-02-18 00:34:31.478965"], ["updated_at", "2015-02-18 00:34:31.478965"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Cowtipping"], ["description", "Step 1: Find cow. Step 2: Tip it . At least 15%."], ["location", "653 Kansas St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 20], ["category", "Outdoors"], ["created_at", "2015-02-18 00:34:31.941151"], ["updated_at", "2015-02-18 00:34:31.941151"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events"[0m
+
+
+Started GET "/" for ::1 at 2015-02-17 16:34:53 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 16:34:56 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2015-02-17 16:38:31 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 16:38:34 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 3.6ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 16:38:44 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.5ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events/6" for ::1 at 2015-02-17 16:44:09 -0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 200 OK in 36ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started PUT "/events/6" for ::1 at 2015-02-17 16:44:11 -0800
+Processing by EventsController#update as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "events" SET "people_count" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["people_count", 11], ["updated_at", "2015-02-18 00:44:11.492510"], ["id", 6]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.6ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events/4" for ::1 at 2015-02-17 16:45:11 -0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 16:50:54 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 3.4ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events/3" for ::1 at 2015-02-17 16:50:57 -0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 26ms (Views: 0.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-02-17 20:24:55 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:24:59 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 24ms (Views: 12.9ms | ActiveRecord: 9.5ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: GET
+  Access-Control-Request-Headers: if-modified-since, accept
+Preflight Headers:
+  Content-Type: text/plain
+  Access-Control-Allow-Origin: http://localhost:8100
+  Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS, HEAD
+  Access-Control-Expose-Headers: access-token, expiry, token-type, uid, client
+  Access-Control-Max-Age: 1728000
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: if-modified-since, accept
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:25:20 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEvents (20150213220627)
+  [1m[35m (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/apprentice/Desktop/Beacon-BEA/db/migrate/20150213220627_create_events.rb:12)
+  [1m[36m (27.5ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "title" character varying, "description" text, "location" character varying, "date_start" timestamp, "date_end" timestamp, "people_count" integer DEFAULT 1, "category" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150213220627"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Aaron's birthday party"], ["description", "Aaron is turning 20. Bring your own apple juice."], ["location", "1272 El Camino Real, San Bruno"], ["date_start", "2015-02-14 20:00:00.000000"], ["date_end", "2015-02-15 01:00:00.000000"], ["people_count", 30], ["category", "Social"], ["created_at", "2015-02-18 04:26:11.013621"], ["updated_at", "2015-02-18 04:26:11.013621"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Smash Bros tournament"], ["description", "The red controller wins every time."], ["location", "1080 Folsom St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 20], ["category", "Video Games"], ["created_at", "2015-02-18 04:26:11.025293"], ["updated_at", "2015-02-18 04:26:11.025293"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Burrito bet smackdown"], ["description", "Bet burritos on Trivia Crack matches, coin tosses, ping pong games, and Smash Bros. Burritos from El Farolito only. Limit $5 per repaid burrito. No guac allowed."], ["location", "2779 Mission St, San Francisco"], ["date_start", "2015-02-20 20:00:00.000000"], ["date_end", "2015-02-20 20:00:00.000000"], ["people_count", 15], ["category", "Food"], ["created_at", "2015-02-18 04:26:11.035349"], ["updated_at", "2015-02-18 04:26:11.035349"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Desert Rabbits demos"], ["description", "We made amazing apps. Hire us!"], ["location", "633 Folsom St, San Francisco"], ["date_start", "2015-02-20 19:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 100], ["category", "Misc"], ["created_at", "2015-02-18 04:26:11.038561"], ["updated_at", "2015-02-18 04:26:11.038561"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Bad joke competition"], ["description", "Bring your best Reddit jokes. Worst joke wins a burrito!"], ["location", "874 Fell St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 10], ["category", "Entertainment"], ["created_at", "2015-02-18 04:26:11.041138"], ["updated_at", "2015-02-18 04:26:11.041138"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Join the Chipotle gang for lunch!"], ["description", "Everyone follow Victoria to Chipotle. The one at the Metreon gives you more meat."], ["location", "525 Market St, San Francisco"], ["date_start", "2015-02-21 04:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 10], ["category", "Food"], ["created_at", "2015-02-18 04:26:11.043409"], ["updated_at", "2015-02-18 04:26:11.043409"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Morning coffee run"], ["description", "Victoria will get Philz for all team leads! Text her before 8:15 or you will default to a large Tesora medium medium."], ["location", "201 Berry St, San Francisco"], ["date_start", "2015-02-21 04:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 8], ["category", "Food"], ["created_at", "2015-02-18 04:26:11.045545"], ["updated_at", "2015-02-18 04:26:11.045545"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "The holiest of all holidays"], ["description", "Don't worry about a thing, cause every little thing's gonna be alright."], ["location", "56 Hope Road Kingston 6 Hope Rd, Kingston, Jamaica"], ["date_start", "2015-04-20 08:00:00.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 200], ["category", "Social"], ["created_at", "2015-02-18 04:26:11.047503"], ["updated_at", "2015-02-18 04:26:11.047503"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Coachella"], ["description", "W00 music and hipster bands."], ["location", "81-800 Avenue 51, Indio, CA"], ["date_start", "2015-04-10 19:59:59.000000"], ["date_end", "2015-04-17 19:59:59.000000"], ["people_count", 500], ["category", "Social"], ["created_at", "2015-02-18 04:26:11.049339"], ["updated_at", "2015-02-18 04:26:11.049339"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Cowtipping"], ["description", "Step 1: Find cow. Step 2: Tip it . At least 15%."], ["location", "653 Kansas St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 20], ["category", "Outdoors"], ["created_at", "2015-02-18 04:26:11.332336"], ["updated_at", "2015-02-18 04:26:11.332336"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:26:29 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 2.2ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:26:31 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:27:33 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:27:36 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:28:32 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 1.7ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:28:34 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEvents (20150213220627)
+  [1m[35m (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/apprentice/Desktop/Beacon-BEA/db/migrate/20150213220627_create_events.rb:12)
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "title" character varying, "description" text, "location" character varying, "date_start" timestamp, "date_end" timestamp, "people_count" integer DEFAULT 1, "category" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150213220627"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Aaron's birthday party"], ["description", "Aaron is turning 20. Bring your own apple juice."], ["location", "1272 El Camino Real, San Bruno"], ["date_start", "2015-02-14 20:00:00.000000"], ["date_end", "2015-02-15 01:00:00.000000"], ["people_count", 30], ["category", "Social"], ["created_at", "2015-02-18 04:29:46.742860"], ["updated_at", "2015-02-18 04:29:46.742860"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Smash Bros tournament"], ["description", "The red controller wins every time."], ["location", "1080 Folsom St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 20], ["category", "Video Games"], ["created_at", "2015-02-18 04:29:46.747520"], ["updated_at", "2015-02-18 04:29:46.747520"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Burrito bet smackdown"], ["description", "Bet burritos on Trivia Crack matches, coin tosses, ping pong games, and Smash Bros. Burritos from El Farolito only. Limit $5 per repaid burrito. No guac allowed."], ["location", "2779 Mission St, San Francisco"], ["date_start", "2015-02-20 20:00:00.000000"], ["date_end", "2015-02-20 20:00:00.000000"], ["people_count", 15], ["category", "Food"], ["created_at", "2015-02-18 04:29:46.749653"], ["updated_at", "2015-02-18 04:29:46.749653"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Desert Rabbits demos"], ["description", "We made amazing apps. Hire us!"], ["location", "633 Folsom St, San Francisco"], ["date_start", "2015-02-20 19:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 100], ["category", "Misc"], ["created_at", "2015-02-18 04:29:46.751621"], ["updated_at", "2015-02-18 04:29:46.751621"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Bad joke competition"], ["description", "Bring your best Reddit jokes. Worst joke wins a burrito!"], ["location", "874 Fell St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 10], ["category", "Entertainment"], ["created_at", "2015-02-18 04:29:46.753778"], ["updated_at", "2015-02-18 04:29:46.753778"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Join the Chipotle gang for lunch!"], ["description", "Everyone follow Victoria to Chipotle. The one at the Metreon gives you more meat."], ["location", "525 Market St, San Francisco"], ["date_start", "2015-02-21 04:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 10], ["category", "Food"], ["created_at", "2015-02-18 04:29:46.755830"], ["updated_at", "2015-02-18 04:29:46.755830"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Morning coffee run"], ["description", "Victoria will get Philz for all team leads! Text her before 8:15 or you will default to a large Tesora medium medium."], ["location", "201 Berry St, San Francisco"], ["date_start", "2015-02-21 04:00:00.000000"], ["date_end", "2015-02-21 04:00:00.000000"], ["people_count", 8], ["category", "Food"], ["created_at", "2015-02-18 04:29:46.757773"], ["updated_at", "2015-02-18 04:29:46.757773"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "The holiest of all holidays"], ["description", "Don't worry about a thing, cause every little thing's gonna be alright."], ["location", "56 Hope Road Kingston 6 Hope Rd, Kingston, Jamaica"], ["date_start", "2015-04-20 08:00:00.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 200], ["category", "Social"], ["created_at", "2015-02-18 04:29:46.759588"], ["updated_at", "2015-02-18 04:29:46.759588"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Coachella"], ["description", "W00 music and hipster bands."], ["location", "81-800 Avenue 51, Indio, CA"], ["date_start", "2015-04-10 19:59:59.000000"], ["date_end", "2015-04-17 19:59:59.000000"], ["people_count", 500], ["category", "Social"], ["created_at", "2015-02-18 04:29:46.761375"], ["updated_at", "2015-02-18 04:29:46.761375"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "description", "location", "date_start", "date_end", "people_count", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "Cowtipping"], ["description", "Step 1: Find cow. Step 2: Tip it . At least 15%."], ["location", "653 Kansas St, San Francisco"], ["date_start", "2015-04-20 19:59:59.000000"], ["date_end", "2015-04-20 19:59:59.000000"], ["people_count", 20], ["category", "Outdoors"], ["created_at", "2015-02-18 04:29:46.767961"], ["updated_at", "2015-02-18 04:29:46.767961"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:30:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:30:05 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:30:05 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:30:07 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+Incoming Headers:
+  Origin: http://localhost:8100
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:33:31 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:33:36 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:34:37 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:34:38 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:35:06 -0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:36:31 -0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for ::1 at 2015-02-17 20:37:17 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 2.2ms)
